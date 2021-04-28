@@ -5,13 +5,13 @@ const { check, validationResult } = require("express-validator");
 const router = new Router();
 
 router.post(
-  "/registration",
+  "/reg",
   [
     check("email", "Uncorrect email").isEmail,
     check("password", "Try one more time").isLength({ min: 3, max: 12 }),
   ],
   async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -27,7 +27,7 @@ router.post(
           .json({ message: `User with ${email} already exist` });
       }
 
-      const hashPassword = await bcrypt.hash(password);
+      const hashPassword = await bcrypt.hash(password, 15);
       const user = new User({ email, password: hashPassword });
       await user.save();
       return res.json({ message: "user was created" });
