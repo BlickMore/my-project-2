@@ -1,4 +1,5 @@
 {
     "serverPort": 5000,
-    "dbUrl" : "mongodb+srv://develop:marlolo12@shopcluster.xlu7t.mongodb.net/shopHoney?retryWrites=true&w=majority"
+    "dbUrl" : "mongodb+srv://develop:marlolo12@shopcluster.xlu7t.mongodb.net/shopHoney?retryWrites=true&w=majority",
+    "secretTokenKey": "here-is-acces-to-db-login"
 }

@@ -6,6 +6,9 @@ const config = require("config");
 const app = express();
 const PORT = config.get("serverPort");
 
+app.use(express.json());
+app.use("/api/auth", authRouter);
+
 const start = async () => {
   try {
     await mongoose.connect(config.get("dbUrl"), {
@@ -19,7 +22,6 @@ const start = async () => {
   } catch (e) {}
 };
 
-app.use(express.json());
-app.use("/api/auth", authRouter);
+
 
 start();

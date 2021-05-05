@@ -1,0 +1,22 @@
+.navbar_cont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.navbar_logo{
+    width: 56px;
+}
+
+.navbar_pages {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar_join {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
